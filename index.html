@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Sarathi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>🚑 AI Sarathi Healthcare Assistant</h1>
+
+    <form action="/predict" method="post">
+        <input type="text" name="symptoms" placeholder="Enter your symptoms..." required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if disease %}
+    <div class="result">
+        <h2>🧠 Disease: {{ disease }}</h2>
+        <h3>👨‍⚕️ Doctor: {{ doctor }}</h3>
+        <p>💊 Precaution: {{ precaution }}</p>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
